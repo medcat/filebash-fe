@@ -1,0 +1,12 @@
+// Photo by Andrew Neel on Unsplash
+// gauss blur: 10px, downscale to max width 4096
+// gauss blur: 250px, downscale to max width 4096
+$alpha-normal-image: url("images/alpha-normal.jpg");
+$alpha-blur-image: url("images/alpha-blur.jpg");
+@include use-style(alpha, $alpha-normal-image, $alpha-blur-image,
+  #0c0c0c, #ff9900, #fff); // or #ff6600
+
+$beta-normal-image: url("images/beta.jpg");
+$beta-blur-image: url("images/beta-blur.jpg");
+@include use-style(beta, $beta-normal-image, $beta-blur-image,
+  #0c0c0c, #2A8fBd, #fff);

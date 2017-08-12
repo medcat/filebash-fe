@@ -10,7 +10,7 @@ var extractIndex = new ExtractTextPlugin({ filename: "index.html" })
 module.exports = {
   entry: "./src/index.js",
   output: {
-    filename: "assets/[chunkhash].[name].js",
+    filename: "[name].[chunkhash].js",
     path: path.resolve(__dirname, "dist")
   },
   module: {
@@ -29,8 +29,8 @@ module.exports = {
         use: {
           loader: "file-loader",
           options: {
-            name: "[sha256:hash:base62].[name].[ext]",
-            publicPath: "images/",
+            name: "[name].[sha256:hash:base62].[ext]",
+            publicPath: "",
             outputPath: "assets/images/"
           }
         }
@@ -49,7 +49,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(["dist"]),
     new HtmlWebpackPlugin({ inject: true, template: "src/index.html" }),
-    new ProvidePlugin({ Promise: "promise-polyfill" }),
+    new ProvidePlugin({ Promise: "promise-polyfill", fetch: "whatwg-fetch" }),
     extractSass, extractIndex
   ]
 };

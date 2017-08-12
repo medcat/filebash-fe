@@ -1,0 +1,27 @@
+.login {
+  &-modal {
+    position: fixed;
+    left: 50%;
+    top: 25vh;
+    width: 960px;
+    margin-left: (-960px / 2);
+
+    &-header { margin-bottom: 0.5em; }
+
+    &-form {
+      &-input {
+        width: ((960px / 2) / 16px) - 1.5em;
+        display: block;
+        margin: 1em { top: 0; left: 0; };
+
+        &:first-child { margin-left: 1em; }
+      }
+
+      &-submit {
+        width: (960px / 16px) - 2em;
+        display: block;
+        margin: 1em { top: 0; };
+      }
+    }
+  }
+}
