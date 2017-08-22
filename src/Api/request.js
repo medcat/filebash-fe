@@ -22,7 +22,7 @@ export default {
       .then(this._checkRequestStatus)
       .then(this._logRequest)
       .then(this._parseRequestJson)
-      .catch(this._failRequest);
+      .catch(this._failRequest); 
   },
 
   _checkRequestStatus(response) {
